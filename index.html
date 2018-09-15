@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Colmar Academy</title>
     <link rel="stylesheet" href="./resources/css/reset.css" type="text/css">
     <link rel="stylesheet" href="./resources/css/style.css" type="text/css">
@@ -11,16 +12,22 @@
     <!-- Top menu bar -->
     <header>
       <div class="logo">
-        <img src="./resources/images/ic-logo.svg" alt="Colmar Academy logo">
+        <img id="logo" src="./resources/images/ic-logo.svg" alt="Colmar Academy logo">
         <span id="colmar">Colmar</span><span id="academy">Academy</span>
       </div>
-      <nav class="menu">
+      <nav class="menu desktop">
         <ul>
           <li>On campus</li>
           <li>Online</li>
           <li>For companies</li>
           <li>Sign in</li>
         </ul>
+      </nav>
+      <nav class="menu mobile">
+        <img id="logo" src="./resources/images/ic-logo.svg" alt="Colmar Academy logo">
+        <img src="./resources/images/ic-on-campus.svg" alt="on campus">
+        <img src="./resources/images/ic-online.svg" alt="for companies">
+        <img src="./resources/images/ic-login.svg" alt="login">
       </nav>
     </header>
 
@@ -33,7 +40,7 @@
         <div class="hero cta">
           <h1>Learn something new everyday</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <button>Start here</button>
+          <button><a href="#">Start here</a></button>
         </div>
       </div>
 
@@ -47,7 +54,8 @@
         </div>
         <div class="key-info">
           <div class="info-block">
-            <img src="./resources/images/information-orientation.jpg" alt="orientation">
+            <img class="desktop" src="./resources/images/information-orientation.jpg" alt="orientation">
+            <img class="mobile" src="./resources/images/information-orientation-mobile.jpg" alt="orientation">
             <div class="info-caption">
               <h3>Orientation date</h3>
               <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
@@ -55,7 +63,8 @@
             </div>
           </div>
             <div class="info-block">
-              <img src="./resources/images/information-campus.jpg" alt="campus">
+              <img class="desktop" src="./resources/images/information-campus.jpg" alt="campus">
+              <img class="mobile" src="./resources/images/information-campus-mobile.jpg" alt="campus">
               <div class="info-caption">
                 <h3>Our campus</h3>
                 <p>Find which campus is close by you</p>
@@ -63,7 +72,8 @@
               </div>
             </div>
               <div class="info-block">
-                <img src="./resources/images/information-guest-lecture.jpg" alt="guest lecturer">
+                <img class="desktop" src="./resources/images/information-guest-lecture.jpg" alt="guest lecturer">
+                <img class="mobile" src="./resources/images/information-guest-lecture-mobile.jpg" alt="guest lecturer">
                 <div class="info-caption">
                   <h3>Our guest lecture</h3>
                   <p>Join a keynote with Oliver Stack about music in medical treatment</p>
@@ -149,11 +159,12 @@
             <!-- Thesis content -->
             <div class="thesis block">
               <div class="video">
-                <video src="./resources/videos/thesis.mp4" autoplay poster="posterimage.jpg">
-                  This video cannot be displayed.
+                <video autoplay controls>
+                  <source src="./resources/videos/thesis.mp4">
+                  Your browser does not support the video tag.
                 </video>
                 <h3>Reimagine urban</h3>
-                <p>"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequate neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</p>
+                <p class="quote">"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequate neque. Sed non accumsan urna. Phasellus sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</p>
               </div>
               <div class="key-info">
                 <div class="info-block">

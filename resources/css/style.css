@@ -6,10 +6,6 @@ body {
   line-height: 1.25rem;
 }
 
-header, footer {
-  padding: 0 1.5rem;
-}
-
 .section {
   padding: 2rem 1.5rem;
 }
@@ -22,6 +18,7 @@ header, footer {
 h2 {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 2rem;
 }
 
 h3 {
@@ -38,6 +35,13 @@ a {
   color: lightblue;
 }
 
+/* Universal mobile styling */
+@media only screen and (max-width: 425px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+
 /* Top menu bar */
 
 header {
@@ -51,12 +55,20 @@ header {
   background-color: white;
 }
 
-.logo, .menu ul {
+nav {
+  margin-right: 1.5rem;
+}
+
+.logo {
+  margin-left: 1.5rem;
+}
+
+.logo, nav ul {
   display: flex;
   align-items: center;
 }
 
-.menu ul li {
+ul li {
   margin-left: 1rem;
 }
 
@@ -69,9 +81,34 @@ header {
   font-weight: bold;
 }
 
-.logo img {
+#logo {
   height: 2rem;
   width: auto;
+}
+
+.menu.mobile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+/* Menu desktop media queries */
+@media only screen and (min-width: 769px){
+  .menu.mobile {
+    display: none;
+  }
+}
+
+/* Menu mobile media queries */
+@media only screen and (max-width: 768px){
+  .menu.desktop {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
 }
 
 /* Hero section */
@@ -97,10 +134,18 @@ header {
 
 button {
   background-color: black;
-  color: white;
   padding: 0.5rem;
   font-size: 1rem;
   border: none;
+}
+
+button a {
+  color: white;
+}
+
+button:hover {
+  background-color: gray;
+  cursor: pointer;
 }
 
 .cta * {
@@ -111,6 +156,32 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   line-height: normal;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+/* Hero section tablet */
+@media only screen and (max-width:768px) {
+  .hero.section {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero img, .cta {
+    width: 100%;
+    margin: 0;
+  }
+
+  button {
+    width: 90%;
+    align-self: center;
+  }
+
+  .cta h1, .cta p {
+    padding-left: 1rem;
+  }
 }
 
 /* Info section */
@@ -135,6 +206,10 @@ h1 {
   flex-direction: column;
 }
 
+.info .info-block:last-child {
+  background-color: lightgray;
+}
+
 .info-block {
   display: flex;
   align-items: center;
@@ -151,18 +226,69 @@ h1 {
   padding: 1rem;
 }
 
+.info .quote {
+  margin-top: 1.5rem;
+}
+
+.source {
+  margin-top: 1rem;
+}
+
+/* Info section desktop media queries */
+@media only screen and (min-width: 426px){
+  .info-block .mobile {
+    display: none;
+  }
+}
+
+/* Info section tablet */
+@media only screen and (max-width: 768px) {
+  .practice {
+    display: none;
+  }
+
+  .key-info {
+    width: 100%;
+    margin: 0;
+  }
+
+  .info-block {
+    padding: 1rem 0;
+  }
+}
+
+/* Info section mobile */
+@media only screen and (max-width: 425px) {
+  .info-block {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .info-block img, .info-caption {
+    width: 100%;
+  }
+
+  .info-block .desktop {
+    display: none;
+  }
+
+  .info .info-block:last-child {
+    background-color: white;
+  }
+}
+
 /* Courses section */
 
 .courses.section {
   background-color: lightgray;
 }
 
-.courses h2 {
+.courses h2, .thesis h2 {
   text-align: center;
 }
 
 .courses.block {
-  margin: 0 3rem;
+  padding: 0 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -170,13 +296,13 @@ h1 {
 }
 
 .course.details {
-  background-color: white;
   margin: 0;
-  height: 7rem;
+  height: auto;
   padding: 1rem;
 }
 
 .course.item {
+  background-color: white;
   width: 30%;
   margin: 2rem 1rem 0;
 }
@@ -194,4 +320,91 @@ h1 {
 h4 {
   text-transform: uppercase;
   color: gray;
+}
+
+/* Course section small desktop */
+@media only screen and (max-width: 1000px) {
+  .course.item {
+    width: 40%;
+  }
+}
+
+/* Course section tablet */
+@media only screen and (max-width: 662px) {
+  .course.image, .course.details h4, .course.details p {
+    display: none;
+  }
+
+  .course.item {
+    width: 100%;
+    background-color: lightgray;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .courses.block {
+    padding: 1rem 0 0 0;
+  }
+
+  .courses.section {
+    background-color: white;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+/* Thesis section */
+.thesis.block {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.video {
+  width: 60%;
+}
+
+video {
+  width: 100%;
+}
+
+.thesis h3 {
+  margin-top: 1.5rem;
+}
+
+.thesis .info-block:first-child {
+  background-color: lightgray;
+}
+
+.thesis .quote {
+  margin-top: 1rem;
+}
+
+/* Thesis section tablet */
+@media only screen and (max-width: 768px) {
+  .thesis .key-info, .video h3, .video p {
+    display: none;
+  }
+
+  .video {
+    width: 100%;
+  }
+
+  .thesis.section {
+    padding: 0 0 1.5rem;
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+  border-top: 1px solid lightgray;
+}
+
+/* Footer mobile */
+@media only screen and (max-width: 425px) {
+  footer nav {
+    display: none;
+  }
 }
